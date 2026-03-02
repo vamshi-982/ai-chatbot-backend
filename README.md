@@ -78,7 +78,7 @@ GET    /chat/history/{sessionId}     Retrieve chat history
 --------------------------------------------------
 
 API Testing
-APIs can be tested using Postman or 
+APIs can be tested using Postman 
 
 --------------------------------------------------
 
