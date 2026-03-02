@@ -78,10 +78,7 @@ GET    /chat/history/{sessionId}     Retrieve chat history
 --------------------------------------------------
 
 API Testing
-APIs can be tested using Postman or Swagger UI.
-
-Swagger URL
-http://localhost:8080/swagger-ui/index.html
+APIs can be tested using Postman or 
 
 --------------------------------------------------
 

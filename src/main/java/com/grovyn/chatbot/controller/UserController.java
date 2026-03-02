@@ -1,5 +1,6 @@
 package com.grovyn.chatbot.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,9 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.grovyn.chatbot.dto.RegisterRequest;
+import com.grovyn.chatbot.dto.UserResponseDTO;
 import com.grovyn.chatbot.entity.User;
 import com.grovyn.chatbot.service.UserService;
-
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -17,17 +19,27 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserController {
 
-	private final UserService userService;
-	
-	@PostMapping("/register")
-	public User registerUser(@RequestBody User user) {
-		return userService.registerUser(user);
-	}
-	
-	@GetMapping("/{email}")
-	public User getUser(@PathVariable String email) {
-		return userService.getUserByEmail(email);
-	}
-	
-	
+    private final UserService userService;
+
+    @PostMapping("/register")
+    public ResponseEntity<UserResponseDTO> registerUser(@RequestBody RegisterRequest request) {
+        User saved = userService.registerUser(request);
+        return ResponseEntity.ok(new UserResponseDTO(
+            saved.getId(),
+            saved.getUsername(),
+            saved.getEmail(),
+            saved.getMobileNumber()
+        ));
+    }
+
+    @GetMapping("/{email}")
+    public ResponseEntity<UserResponseDTO> getUser(@PathVariable String email) {
+        User user = userService.getUserByEmail(email);
+        return ResponseEntity.ok(new UserResponseDTO(
+            user.getId(),
+            user.getUsername(),
+            user.getEmail(),
+            user.getMobileNumber()
+        ));
+    }
 }
