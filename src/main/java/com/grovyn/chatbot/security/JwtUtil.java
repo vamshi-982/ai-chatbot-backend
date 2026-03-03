@@ -1,4 +1,4 @@
-package com.grovyn.chatbot.security;
+/*package com.grovyn.chatbot.security;
 
 import java.util.Date;
 
@@ -39,4 +39,4 @@ public class JwtUtil {
                 .getBody()
                 .getSubject();
     }
-}
+}*/

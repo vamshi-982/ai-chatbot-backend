@@ -1,4 +1,4 @@
-package com.grovyn.chatbot.security;
+/*package com.grovyn.chatbot.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -47,4 +47,4 @@ public class SecurityConfig {
             throw new org.springframework.security.core.userdetails.UsernameNotFoundException("User not found");
         };
     }
-}
+}*/

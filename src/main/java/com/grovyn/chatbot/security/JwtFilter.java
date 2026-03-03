@@ -1,4 +1,4 @@
-package com.grovyn.chatbot.security;
+/*package com.grovyn.chatbot.security;
 
 import java.io.IOException;
 
@@ -62,4 +62,4 @@ public class JwtFilter extends OncePerRequestFilter {
 
         filterChain.doFilter(request, response);
     }
-}
+}*/
